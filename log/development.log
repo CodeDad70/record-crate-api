@@ -158,3 +158,8 @@ Migrating to CreateArtists (20180623012953)
   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(229082335450017420)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAlbum Load (2.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" ORDER BY "albums"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "albums" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ramones"], ["price", "15.99"], ["created_at", "2018-06-23 01:40:39.498132"], ["updated_at", "2018-06-23 01:40:39.498132"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" LIMIT $1[0m  [["LIMIT", 11]]
