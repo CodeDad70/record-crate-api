@@ -8,7 +8,8 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'localhost:3000'
-
+    # to allow multiple urls :
+    # origins ['localhost:3000',  'https://dashboard.heroku.com/apps/floating-atoll-18673']
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
