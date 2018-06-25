@@ -1,6 +1,6 @@
 class Api::AlbumsController < ApplicationController
 
-  before_action :set_album, only: [:show, :edit, :destroy]
+  before_action :set_album, only: [:show, :update, :destroy]
 
   def index 
     render json: Album.all
